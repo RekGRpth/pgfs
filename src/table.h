@@ -1,7 +1,7 @@
 #ifndef PGFS_TABLE_H
 #define PGFS_TABLE_H
 
-struct PQconn;
+#include <libpq-fe.h>
 
 size_t
 pgfs_list_tables(PGconn * conn, char const* schema, char ***tables);

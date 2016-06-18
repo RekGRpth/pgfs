@@ -1,7 +1,7 @@
 #ifndef PGFS_SCHEMA_H
 #define PGFS_SCHEMA_H
 
-struct PQconn;
+#include <libpq-fe.h>
 
 size_t
 pgfs_list_schemas(PGconn * conn, char ***schemas);
