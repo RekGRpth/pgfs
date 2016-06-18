@@ -4,7 +4,13 @@ AC_CONFIG_AUX_DIR(build-aux)
 
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 
+# C compiler and c99 suport
 AC_PROG_CC
+AC_PROG_CC_C99
+if test x"$ac_cv_prog_cc_c99" = x"no"; then
+  AC_MSG_FAILURE([C99 support is mandatory, your compiler not suport this])
+fi
+
 AC_HEADER_DIRENT
 
 PKG_CHECK_MODULES([libpq], [libpq])
